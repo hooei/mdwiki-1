@@ -8,44 +8,35 @@
 * 1.5 [在线接口测试工具](#1.5)
 * 1.6 [返回值结构说明](#1.6)
 
-<a name="1.1"></a>
 ###1.1 流程说明
 第三方将需处理的业务数据以"key=value"形式通过HTTP的GET/POST请求发送给费睿接口，费睿接口将负责与微信API的业务处理与维护工作，并将业务处理结果以JSON格式返回给第三方。第三方每次发送请求都将收到费睿接口的响应结果（响应返回格式为JSON格式），另外双方需要保证数据传输的完整性和安全性。
 
-<a name="1.2"></a>
 ###1.2 费睿提供的服务
  1. 第三方可通过向费睿接口发起相应http请求，即可完成第三方自身与微信接口相应的业务处理。
  2. 维护微信的`AccessToken`, 每隔7000 秒更新一次微信`AccessToken`。
  3. 将第三方的请求数据封装并调用微信API接口进行相应的业务处理。
  4. 将业务处理结果定制化返回给第三方。
 
-<a name="1.3"></a>
 ###1.3 调用流程图
-```flow
-st=>start: 第三方 
-op=>operation: 调用 费睿API
-e=>end: 结束
-st->op->e
-```
+
+<center> ![流程图](../../uploads/images/weixin_goapi_flow_pic.png) </center>
 
 > 如果接口返回的状态码`retcode`等于200,即表示调用成功，如果不是，将通过`msg`字段返回错误原因。 
 
-<a name="1.4"></a>
 ###1.4 字符编码
 接口服务器接收数据必须为 UTF-8 编码，如提交编码为 GBK，请自行转码。请求相应返回内容为 JSON 格式。
 
-<a name="1.5"></a>
 ###1.5 在线接口测试工具
 http://supervise.verystar.cn/api_test/hiproapi_test
 
-<a name="1.6"></a>
 ###1.6 返回值结构说明
 返回值为 JSON 格式。每次请求都会返回 3 个字段： 
+
 | 字段名称 | 描述 |
 | :-------- | :------ |
-|retcode|  为  200  代表成功，其他值为失败。|
-|msg |当 retcode  不为  200  时返回操作失败说明。| 
-|data |  当请求有需要返回数据时，数据通过 data 字段传递。 |
+| retcode |  为  200  代表成功，其他值为失败。|
+| msg |当 retcode  不为  200  时返回操作失败说明。| 
+| data |  当请求有需要返回数据时，数据通过 data 字段传递。 |
 
 
 ##2、接口协议
@@ -54,23 +45,19 @@ http://supervise.verystar.cn/api_test/hiproapi_test
 * 2.3 [Authcode 机制](#2.3)
 * 2.4 [签名示例](#2.4)
 
-<a name="2.1"></a>
 ###2.1 协议说明
 * `HTTP` 协议适用于通过API进行支付信息相关的数据处理
 * `JSON` 作为调用微信接口的标准数据协议
 
-<a name="2.2"></a>
 ###2.2 安全认证机制
 客户向我方申请接口调用权限，我方会向客户提供一个 `client_code `字符串和一个`client_secret` 字符串作为身份证明和请求许可性验证。`client_code `字符串需要跟随每次请求传递给费睿接口， `client_secret `字符串作为生成 `authcode `验证码的干扰噪点，注意`client_secret`禁止通过API接口传递。请求参数必须包含`req_time`字段，`req_time` 字段为请求时间的 UNIX 时间戳（十位）， 超时 5 分钟的请求将被服务器拒绝。 
 
-<a name="2.3"></a>
 ###2.3 Authcode 机制
 首先，将签名参数（即请求参数 和 `client_secret`） 按照字段名的ASCII码从小到大排序（字典序）后，将各个签名参数的 value字段拼接成字符串stringA（即value1value2…）。然后把拼接好的字符串stringA进行MD5加密,加密值作为 authcode参数传递给费睿接口。authcode通过 GET 方式传递，其余参数都通过 POST 方式传递。
 
 >1. 如果某个签名参数的值为空，则不用于生成签名值
 >2. 字段名和字段值都采用原始值，不进行URL 转义
 
-<a name="2.4"></a>
 ###2.4 签名示例
 
 ####Authcode 生成步骤:
@@ -128,7 +115,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 * 3.23 [查询又拍云查询MP3转码进度](#3.23)
 * 3.24 [客服接口-发消息](#3.24)
 
-<a name="3.1"></a>
 ###3.1 设置跳板信息
 
 ####接口说明
@@ -185,7 +171,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | component_appid | string | | 第三方授权的component_appid |
 | redirect | string | |重定向url  |
 
-<a name="3.2"></a>
 ###3.2 获取跳板信息
 
 ####接口说明
@@ -250,7 +235,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | authorizer_access_token | string | | 第三方授权的authorizer_access_token |
 | component_access_token | string | | 第三方授权的component_access_token |
 
-<a name="3.3"></a>
 ###3.3 设置用户信息
 
 ####接口说明
@@ -293,7 +277,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | data | string |  | 跳板信息对应的key |
 | msg | string |  | 错误描述 |
 
-<a name="3.4"></a>
 ###3.4 获取用户信息
 
 ####接口说明
@@ -359,7 +342,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | privilege | string | | 用户特权信息，json 数组，如微信沃卡用户为（chinaunicom） |
 | unionid | string | | 只有在用户将公众号绑定到微信开放平台帐号后，才会出现该字段。|
 
-<a name="3.5"></a>
 ###3.5 设置微信卡券Code码跳板信息
 
 ####接口说明
@@ -416,7 +398,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | key | string |  |  微信卡券code码跳板信息key |
 | redirect | string |  | 重定向url |
 
-<a name="3.6"></a>
 ###3.6 设置微信卡券跳板信息
 
 ####接口说明
@@ -473,7 +454,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | key | string |  |  微信卡券跳板信息key |
 | redirect | string |  | 重定向url |
 
-<a name="3.7"></a>
 ###3.7 获取微信卡券跳板信息
 
 ####接口说明
@@ -555,7 +535,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | outer_id | string |  | 场景ID |
 | success_uri | string |  | 调用后的重定向uri |
 
-<a name="3.8"></a>
 ###3.8 设置跳板信息测试接口
 
 ####接口说明
@@ -611,7 +590,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | component_appid | string | |第三方授权的component_appid |
 | redirect | string | |重定向url  |
 
-<a name="3.9"></a>
 ###3.9 异步发送消息接口
 
 ####接口说明
@@ -655,7 +633,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | data | int |  | 唯一发送ID |
 | msg | string |  | 错误描述 |
 
-<a name="3.10"></a>
 ###3.10 核销卡券code码
 
 ####接口说明
@@ -711,7 +688,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | openid | string | | 用户在该公众号内的唯一身份标识 |
 | card_id | string | | 卡券ID  |
 
-<a name="3.11"></a>
 ###3.11 设置卡券失效
 
 ####接口说明
@@ -763,7 +739,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | errcode | int |  | 错误码 |
 | errmsg | string | | 错误信息 |
 
-<a name="3.12"></a>
 ###3.12 卡券code解码接口
 
 ####接口说明
@@ -816,7 +791,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | errmsg | string | | 错误信息 |
 | code | string | | 解密后获取的真实Code码 |
 
-<a name="3.13"></a>
 ###3.13 激活会员卡
 
 ####接口说明
@@ -876,7 +850,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | errcode | int | 0 | 错误码，0表示激活成功|
 | errmsg | string | | 错误信息 |
 
-<a name="3.14"></a>
 ###3.14 更新会员信息
 
 ####接口说明
@@ -943,7 +916,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | result_balance | int | | 当前用户预存总金额 |
 | openid | string | | 用户openid |
 
-<a name="3.15"></a>
 ###3.15 获取用户已领取的卡券
 
 ####接口说明
@@ -1000,7 +972,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | errmsg | string | | 错误信息 |
 | card_list | Json | | 卡券列表 |
 
-<a name="3.16"></a>
 ###3.16 查询卡券详情
 
 ####接口说明
@@ -1053,7 +1024,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | errmsg | string | | 错误信息 |
 | card | | | 卡券详情结构,（请参考微信官方文档） |
 
-<a name="3.17"></a>
 ###3.17 生成短链接
 
 ####接口说明
@@ -1096,7 +1066,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | data | string  |  | 生成的短链接url |
 | msg | string |  | 错误描述 |
 
-<a name="3.18"></a>
 ###3.18 更新短链接
 
 ####接口说明
@@ -1139,7 +1108,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | data | string |  | 更新之后的短链接url |
 | msg | string |  | 错误描述 |
 
-<a name="3.19"></a>
 ###3.19 生成二维码
 
 ####接口说明
@@ -1200,7 +1168,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | url | string | | 二维码图片解析后的地址，开发者可根据该地址自行生成需要的二维码图片 |
 | show_qrcode_url | string | | 二维码显示地址，点击后跳转二维码页面 |
 
-<a name="3.20"></a>
 ###3.20 生成卡包信息
 
 ####接口说明
@@ -1267,7 +1234,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | outer_id | string | | 场景ID |
 | signature | string | | 签名值 |
 
-<a name="3.21"></a>
 ###3.21 下载微信媒体
 
 ####接口说明
@@ -1325,7 +1291,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | width | int |  | 媒体文件的宽度 |
 | height | int |  | 媒体文件的高度 |
 
-<a name="3.22"></a>
 ###3.22 微信语音AMR转MP3
 
 ####接口说明
@@ -1368,7 +1333,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | data |  | nil |  nil表示转换成功 |
 | msg | string |  | 错误描述 |
 
-<a name="3.23"></a>
 ###3.23 查询又拍云查询MP3转码进度
 
 ####接口说明
@@ -1410,7 +1374,6 @@ authcode value = ff855997852eaebd899ce54fc094baed
 | data | string |  | 查询地址  |
 | msg | string |  | 错误描述 |
 
-<a name="3.24"></a>
 ###3.24 客服接口-发消息
 
 ####接口说明
