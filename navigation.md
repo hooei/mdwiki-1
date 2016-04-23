@@ -37,10 +37,10 @@
 
 [Test]()
 
- * [ShowPage](pages/testPage.md)
+ * [ShowPage](pages/test/testPage.md)
 
 
-[About](pages/about.md)
+[About](pages/about/about.md)
 
 <!--
   -- Change the Language
