@@ -39,6 +39,9 @@
 
  * [ShowPage](pages/test/testPage.md)
 
+[费睿Go接口]
+
+ * [weixinAPI](pages/goapi/weixin/index.md)
 
 [About](pages/about/about.md)
 
