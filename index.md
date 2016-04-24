@@ -1,5 +1,7 @@
 # MDwiki 使用手册
 
+Note: MDwiki is a CMS/Wiki system using Javascript for 100% client side single page application using Markdown.
+
 ## 搭建本地MDwiki
 
 [MDwiki](https://github.com/Dynalon/mdwiki)是一个完全使用 HTML5/Javascript 技术构建，完全运行在客户端的 Wiki/CMS 系统。`无需专门的服务器软件，只需将 mdwiki.html 上传到你存放 markdown 文件的目录`。
