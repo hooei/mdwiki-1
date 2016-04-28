@@ -42,6 +42,7 @@
 [费睿Go接口]()
 
  * [weixinAPI](pages/goapi/weixin/index.md)
+ * [usertag API](pages/goapi/usertag/index.md)
 
 [About](pages/about/about.md)
 
