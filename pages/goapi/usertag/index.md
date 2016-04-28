@@ -519,8 +519,8 @@
 | client_code | 是 | string | `client_code`作为公钥用于验证用户ID |
 | req_time | 是 | int | 请求时的时间戳 |
 | task_name| 是 | string | 任务名称 |
-| tag_names| 是 | string | 标签名称 [注解1](index.md#_注解1)|
-| report_type | 是 | string | 报告类型 [注解2](index.md#_注解2)|
+| tag_names| 是 | string | 标签名称 [注解1](index.md#注解1)|
+| report_type | 是 | string | 报告类型 [注解2](index.md#注解2)|
 | start_date | 是 | string | 查询开始日期 |
 | end_date   | 是 | string | 查询截至日期 |
 | callback_url | 是 | string | 回调uri | 
@@ -561,11 +561,11 @@
 |109 | authcode 非法 |
 
 
-#### 注解1: 
+#### 注解1 
 > 
 tag_names json 格式； 比如有 `16SS-UT` 和 `搭配时尚` 两个tag_name 
 tag_names  = "[\"16SS-UT\",\"搭配时尚\"]",
 
-#### 注解2:
+#### 注解2
 > 
 report_type 可选值为1, 2 或 3。 
