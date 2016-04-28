@@ -563,9 +563,10 @@
 
 #### 注解1 
 > 
-tag_names json 格式； 比如有 `16SS-UT` 和 `搭配时尚` 两个tag_name 
-tag_names  = "[\"16SS-UT\",\"搭配时尚\"]",
+tag_names 值为json格式;
+如有 `16SS-UT` 和 `搭配时尚` 两个tag_name ,
+则 tag_names 可表示为 `"[\"16SS-UT\",\"搭配时尚\"]"`。
 
 #### 注解2
 > 
-report_type 可选值为1, 2 或 3。 
+report_type 可选值为`1`, `2` 或 `3`。 
