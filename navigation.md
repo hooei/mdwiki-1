@@ -44,6 +44,10 @@
  * [weixinAPI](pages/goapi/weixin/index.md)
  * [usertag API](pages/goapi/usertag/index.md)
 
+[常用git命令]()
+
+ * [常用git命令](pages/gitstudy/oftenuse.md)
+
 [About](pages/about/about.md)
 
 <!--
