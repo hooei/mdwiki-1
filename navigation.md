@@ -47,6 +47,7 @@
 [常用git命令]()
 
  * [常用git命令](pages/gitstudy/oftenuse.md)
+ * [git忽略规则](pages/gitstudy/gitignore.md)
 
 [About](pages/about/about.md)
 
