@@ -4,7 +4,7 @@
 * 1 [截图软件 Shutter](ubuntu.md#1_截图软件_Shutter)
 * 2 [图像浏览器 gThumb](ubuntu.md#2_图像浏览器_gThumb)
 
-## Env
+**Env**
 
 ```bash
 ➜ sudo lsb_release -a

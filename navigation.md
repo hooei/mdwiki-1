@@ -50,6 +50,7 @@
  * [git忽略规则](pages/gitstudy/gitignore.md)
 
 [OsTips]()
+
  * [ubuntu](pages/ostips/ubuntu.md)
 
 [About](pages/about/about.md)
