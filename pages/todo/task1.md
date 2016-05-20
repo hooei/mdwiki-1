@@ -41,7 +41,7 @@ Permanently delete task 1 'Buy a vps!'? (yes/no) yes
 Deleting task 1 'Buy a vps!'.
 Deleted 1 task.
 ```
-### 按紧急程度排序项目
+### 按紧急程度指出下一个待进行到项目
 ```bash
 $ task next 
 ```
@@ -86,7 +86,7 @@ $ task proj:company list
 ```bash
 $ task 1 modify proj:
 ```
-**注意:** 删除的隶属项目会作为一个独立到项目列在任务表中
+**注意:** 删除的隶属项目会作为一个独立的项目列在任务表中
 
 ## 高级用法
 
