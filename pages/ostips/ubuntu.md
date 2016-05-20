@@ -3,6 +3,9 @@
 
 * 1 [截图软件 Shutter](ubuntu.md#1_截图软件_Shutter)
 * 2 [图像浏览器 gThumb](ubuntu.md#2_图像浏览器_gThumb)
+* 3 [PDF查看工具 Okular](ubuntu.md#3_PDF查看工具_Okular)
+* 4 [PDF编辑工具 Master PDF Editor](ubuntu.md#4_PDF编辑工具_Master_PDF_Editor)
+
 
 **Env**
 
@@ -37,3 +40,21 @@ sudo apt install shutter
 ```bash
 sudo apt install gthumb
 ```
+
+## 3 PDF查看工具 Okular 
+
+最近发现的DPF查看的工具，支持标记，评论等，还可以直接PDF截图等。可以作各种个性化设置，已经变成我的默认PDF查看器了，同时支持的格式众多。
+
+**安装:**
+
+```bash
+sudo apt install okular
+```
+
+## 4 PDF编辑工具 Master PDF Editor 
+
+有时候需要编辑PDF文件，[Master PDF Editor](https://code-industry.net/masterpdfeditor/)便是好工具之一。支持PDF和XPS文件的导入导出到JPG、TIFF、PNG、BMP等图片格式，可以添加按钮、文本、选择框等，对于原有的文本修改当然也不在话下，例如页面的删除，非常简单，对原有PDF的图片可以任意移动修改和保存等。同时对于常见的PDF阅读需求，如添加注释、高亮等也非常的强大。
+
+这个软件是跨平台滴，Windowns、MAC、Ubuntu下都可以使用，而且，重点是Ubuntu下是免费。
+
+
