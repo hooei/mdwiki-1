@@ -11,10 +11,10 @@
 
 ```bash
 ➜ sudo lsb_release -a
-Distributor ID:	Ubuntu
-Description:	Ubuntu 16.04 LTS
-Release:	16.04
-Codename:	xenial
+Distributor ID : Ubuntu
+Description    : Ubuntu 16.04 LTS
+Release        : 16.04
+Codename       : xenial
 ```
 
 ## 1 截图软件 Shutter
