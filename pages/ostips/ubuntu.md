@@ -57,4 +57,10 @@ sudo apt install okular
 
 这个软件是跨平台滴，Windowns、MAC、Ubuntu下都可以使用，而且，重点是Ubuntu下是免费。
 
+**安装:**
+从https://code-industry.net/masterpdfeditor/ 下载: sudo dpkg -i master-pdf-editor-3.7.10_amd64.deb
+
+```bash
+sudo dpkg -i master-pdf-editor-3.7.10_amd64.deb
+```
 
