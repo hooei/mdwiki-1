@@ -5,6 +5,7 @@
 * 2 [图像浏览器 gThumb](ubuntu.md#2_图像浏览器_gThumb)
 * 3 [PDF查看工具 Okular](ubuntu.md#3_PDF查看工具_Okular)
 * 4 [PDF编辑工具 Master PDF Editor](ubuntu.md#4_PDF编辑工具_Master_PDF_Editor)
+* 5 [类似Alfred的软件Mutate](ubuntu.md#5_类似Alfred的软件Mutate)
 
 
 **Env**
@@ -62,5 +63,17 @@ sudo apt install okular
 
 ```bash
 sudo dpkg -i master-pdf-editor-3.7.10_amd64.deb
+```
+
+## 5 类似Alfred的软件Mutate
+
+Ubuntu中类似Alfred的软件[Mutate](https://github.com/qdore/Mutate)。Mutate还
+支持Custom Scripts，自定义类似Alfred的workflow。
+
+**安装:**
+```bash
+wget https://github.com/qdore/Mutate/releases/download/v2.3/Mutate-2.3.deb
+sudo apt-get install gdebi
+sudo gdebi Mutate-2.3.deb
 ```
 
