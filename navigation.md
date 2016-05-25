@@ -52,6 +52,7 @@
 [OsTips]()
 
  * [ubuntu](pages/ostips/ubuntu.md)
+ * [httpie](pages/ostips/httpie.md)
 
 
 [TODO]()
