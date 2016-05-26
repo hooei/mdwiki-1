@@ -38,6 +38,7 @@
 [Test]()
 
  * [ShowPage](pages/test/testPage.md)
+ * [watchers&Stars](pages/test/github.md)
 
 [费睿Go接口]()
 
