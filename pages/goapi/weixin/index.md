@@ -1,18 +1,18 @@
-﻿#费睿 weixin API 文档 V1.0
+﻿#费芮 weixin API 文档 V1.0
 
 ##1、文档说明
 * 1.1 [流程说明](index.md#1.1_流程说明)
-* 1.2 [费睿提供的服务](index.md#1.2_费睿提供的服务)
+* 1.2 [费芮提供的服务](index.md#1.2_费芮提供的服务)
 * 1.3 [调用流程图](index.md#1.3_调用流程图)
 * 1.4 [字符编码](index.md#1.4_字符编码)
 * 1.5 [在线接口测试工具](index.md#1.5_在线接口测试工具)
 * 1.6 [返回值结构说明](index.md#1.6_返回值结构说明)
 
 ###1.1 流程说明
-第三方将需处理的业务数据以"key=value"形式通过HTTP的GET/POST请求发送给费睿接口，费睿接口将负责与微信API的业务处理与维护工作，并将业务处理结果以JSON格式返回给第三方。第三方每次发送请求都将收到费睿接口的响应结果（响应返回格式为JSON格式），另外双方需要保证数据传输的完整性和安全性。
+第三方将需处理的业务数据以"key=value"形式通过HTTP的GET/POST请求发送给费芮接口，费芮接口将负责与微信API的业务处理与维护工作，并将业务处理结果以JSON格式返回给第三方。第三方每次发送请求都将收到费芮接口的响应结果（响应返回格式为JSON格式），另外双方需要保证数据传输的完整性和安全性。
 
-###1.2 费睿提供的服务
- 1. 第三方可通过向费睿接口发起相应http请求，即可完成第三方自身与微信接口相应的业务处理。
+###1.2 费芮提供的服务
+ 1. 第三方可通过向费芮接口发起相应http请求，即可完成第三方自身与微信接口相应的业务处理。
  2. 维护微信的`AccessToken`, 每隔7000 秒更新一次微信`AccessToken`。
  3. 将第三方的请求数据封装并调用微信API接口进行相应的业务处理。
  4. 将业务处理结果定制化返回给第三方。
@@ -50,10 +50,10 @@ http://supervise.verystar.cn/api_test/hiproapi_test
 * `JSON` 作为调用微信接口的标准数据协议
 
 ###2.2 安全认证机制
-客户向我方申请接口调用权限，我方会向客户提供一个 `client_code `字符串和一个`client_secret` 字符串作为身份证明和请求许可性验证。`client_code `字符串需要跟随每次请求传递给费睿接口， `client_secret `字符串作为生成 `authcode `验证码的干扰噪点，注意`client_secret`禁止通过API接口传递。请求参数必须包含`req_time`字段，`req_time` 字段为请求时间的 UNIX 时间戳（十位）， 超时 5 分钟的请求将被服务器拒绝。 
+客户向我方申请接口调用权限，我方会向客户提供一个 `client_code `字符串和一个`client_secret` 字符串作为身份证明和请求许可性验证。`client_code `字符串需要跟随每次请求传递给费芮接口， `client_secret `字符串作为生成 `authcode `验证码的干扰噪点，注意`client_secret`禁止通过API接口传递。请求参数必须包含`req_time`字段，`req_time` 字段为请求时间的 UNIX 时间戳（十位）， 超时 5 分钟的请求将被服务器拒绝。 
 
 ###2.3 Authcode 机制
-首先，将签名参数（即请求参数 和 `client_secret`） 按照字段名的ASCII码从小到大排序（字典序）后，将各个签名参数的 value字段拼接成字符串stringA（即value1value2…）。然后把拼接好的字符串stringA进行MD5加密,加密值作为 authcode参数传递给费睿接口。authcode通过 GET 方式传递，其余参数都通过 POST 方式传递。
+首先，将签名参数（即请求参数 和 `client_secret`） 按照字段名的ASCII码从小到大排序（字典序）后，将各个签名参数的 value字段拼接成字符串stringA（即value1value2…）。然后把拼接好的字符串stringA进行MD5加密,加密值作为 authcode参数传递给费芮接口。authcode通过 GET 方式传递，其余参数都通过 POST 方式传递。
 
 >1. 如果某个签名参数的值为空，则不用于生成签名值
 >2. 字段名和字段值都采用原始值，不进行URL 转义
@@ -62,7 +62,7 @@ http://supervise.verystar.cn/api_test/hiproapi_test
 
 ####Authcode 生成步骤:
 
-首先，将签名参数（即请求参数 和 `client_secret`） 按照字段名的ASCII码从小到大排序（字典序）后，将各个签名参数的 value字段拼接成字符串stringA（即value1value2…）；然后把拼接好的字符串stringA进行MD5加密,加密值作为 authcode参数传递给费睿接口。authcode通过 GET 方式传递，其余参数都通过 POST 方式传递。
+首先，将签名参数（即请求参数 和 `client_secret`） 按照字段名的ASCII码从小到大排序（字典序）后，将各个签名参数的 value字段拼接成字符串stringA（即value1value2…）；然后把拼接好的字符串stringA进行MD5加密,加密值作为 authcode参数传递给费芮接口。authcode通过 GET 方式传递，其余参数都通过 POST 方式传递。
 
 >请注意以下重要规则:
  　　应按照字段名的ASCII码从小到大排序（字典序）;
@@ -486,7 +486,7 @@ authcode value = ff855997852eaebd899ce54fc094baed
     "data": {
 		"code": "2331005",
 		"redirect_uri": "www.verystar.cn",
-		"redirect_uri_name": "费睿互动",
+		"redirect_uri_name": "费芮互动",
 		"main_color": "red",
 		"show_btn": "false",
 		"client_code": "aaaaaa",

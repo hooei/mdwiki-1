@@ -40,7 +40,7 @@
  * [ShowPage](pages/test/testPage.md)
  * [watchers&Stars](pages/test/github.md)
 
-[费睿Go接口]()
+[费芮Go接口]()
 
  * [weixinAPI](pages/goapi/weixin/index.md)
  * [usertag API](pages/goapi/usertag/index.md)
