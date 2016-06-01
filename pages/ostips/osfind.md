@@ -3,46 +3,39 @@
 ## sed
 ```bash
 grep -rl matchstring somedir/ | xargs sed -i 's/string1/string2/g' 
-```
-
-Exp:
- 
-对象:文件夹
-
-```bash
+# Exp:
 grep -rl 'windows' ./path | xargs sed -i 's/windows/linux/g'  
 ```
  
-## find
-对象:文件
-
-```bash
-find -name 'test' | xargs perl -pi -e 's|windows|linux|g'  
-```
-这里使用了`perl`语言，使用`-e`加上一段代码，从而批量地将当前目录及所有子目录下的`file.log`文件中的`string1`替换成了`string2`;`string`支持正则表达式
- 
 ## awk
+
 ```bash
 grep -i "windows" -r ./path | awk -F : '{print $1}' | sort | uniq | xargs sed -i 's/windows/linux/g'  
 ```
+
 这里使用了`shell`命令，先查找出文件，再用`awk`分割（以`:`切分），再行替换！
 **注意：** `grep`可以使用正则，也可以使用`\`转义一些特殊字符，比如`“`等 
+
 ```bash
 sed -i 's/\"localhost\"/\"10.2.2.2\"/g' /home/my.conf
 ```
  
 ## sed replace word`/`string syntax
+
 The syntax is as follows:
+
 ```bash
 sed -i 's/old-word/new-word/g' *.txt  
 ```
  
 GNU sed command can edit files in place (makes backup if extension supplied) using the`-i`option. If you are using an old UNIX sed command version try the following syntax:
+
 ```bash
 sed 's/old/new/g' input.txt > output.txt  
 ```
  
 You can use old sed syntax along with bash for loop:
+
 ```bash
 #!/bin/bash  
 OLD="xyz"  
