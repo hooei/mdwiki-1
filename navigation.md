@@ -55,7 +55,7 @@
  * [ubuntu](pages/ostips/ubuntu.md)
  * [httpie](pages/ostips/httpie.md)
  * [查找与替换](pages/ostips/osfind.md)
-
+ * [linuxcmd](pages/ostips/linuxcmd.md)
 
 [TODO]()
 
