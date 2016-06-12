@@ -6,6 +6,8 @@
 * 3 [PDF查看工具 Okular](ubuntu.md#3_PDF查看工具_Okular)
 * 4 [PDF编辑工具 Master PDF Editor](ubuntu.md#4_PDF编辑工具_Master_PDF_Editor)
 * 5 [类似Alfred的软件Mutate](ubuntu.md#5_类似Alfred的软件Mutate)
+* 6 [安装媒体解码器](ubuntu.md#6_安装媒体解码器)
+* 7 [安装系统清理工具](ubuntu.md#7_安装系统清理工具)
 
 
 **Env**
@@ -77,3 +79,22 @@ sudo apt-get install gdebi
 sudo gdebi Mutate-2.3.deb
 ```
 
+## 6 安装媒体解码器
+
+由于「法律限制」Ubuntu 无法集成「开箱即用」的 MP3、MP4 等多媒体文件解码支持,不过我们可以在系统安装好之后手动安装 Ubuntu Restricted Extras 来获取媒体解码器。
+
+安装Ubuntu Restricted Extras
+```bash
+apt://ubuntu-restricted-extras
+```
+将上面的安装地址复制到浏览器地址栏回车即可。
+
+
+## 7 安装系统清理工具
+
+操作系统使用久了,越来越多的缓存和垃圾文件都会不断拖慢系统,在此推荐大家安装开源、免费的 BleachBit 工具来进行 Ubuntu 系统清理。
+
+安装BleachBit on Ubuntu
+```bash
+apt://bleachbit
+```
