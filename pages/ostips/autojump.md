@@ -136,3 +136,13 @@ $ autojump --purge
 ```bash
 $ j --help
 ```
+
+errors
+
+安装autojump 之后，发现vim 没法用tab键补全了，解决方案:
+```bash
+rm .zcompdump*
+exec zsh
+```
+
+参考:https://github.com/robbyrussell/oh-my-zsh/issues/518
