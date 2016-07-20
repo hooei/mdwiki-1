@@ -67,6 +67,7 @@
 
  * [http协议长连接/长轮询](pages/web/http.md)
  * [golang template 语法](pages/web/gotemplate.md)
+ * [httpacceptlanguage语法](pages/web/httpacceptlanguage.md)
 
 [About](pages/about/about.md)
 
