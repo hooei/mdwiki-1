@@ -57,6 +57,7 @@
  * [查找与替换](pages/ostips/osfind.md)
  * [linuxcmd](pages/ostips/linuxcmd.md)
  * [autojump](pages/ostips/autojump.md)
+ * [vim折叠](pages/ostips/vimfold.md)
 
 [TODO]()
 
