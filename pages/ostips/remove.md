@@ -2,7 +2,7 @@
 
 方法一：safe-rm软件
 safe-rm 是一个开源软件用来替代不太安全的rm。
-官方地址：http://freecode.com/projects/safe-rm，ubuntu可以直接apt-get安装，centos要下载源码安装。
+官方地址：http://freecode.com/projects/safe-rm  ubuntu可以直接apt-get安装，centos要下载源码安装。
 
 方法二：建立回收站机制
 它并不真正执行删除操作，而是将文件移动到一个特定目录，可以设置定时清楚回收站，或者在回收站里面的文件大小达到一定容量时（或者用时间做判断）执行删除操作以腾出空间。
