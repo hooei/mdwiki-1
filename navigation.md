@@ -50,6 +50,8 @@
  * [常用git命令](pages/gitstudy/oftenuse.md)
  * [git忽略规则](pages/gitstudy/gitignore.md)
  * [git tag操作](pages/gitstudy/tag.md)
+ * [git cmd操作](pages/gitstudy/gitcmd.md)
+
 
 [OsTips]()
 
