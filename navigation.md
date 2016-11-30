@@ -63,6 +63,7 @@
  * [vim折叠](pages/ostips/vimfold.md)
  * [osx-socks5翻墙](pages/ostips/osx-socks5.md)
  * [osx-rm防误删](pages/ostips/remove.md)
+ * [修改keyborad](pages/ostips/modifiedkeyborad.md)
 
 [TODO]()
 
